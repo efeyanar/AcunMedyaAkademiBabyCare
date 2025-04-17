@@ -1,7 +1,10 @@
 using AcunMedyaAkademiBabyCare.Context;
+using FluentValidation;
+using FluentValidation.AspNetCore;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Services.AddFluentValidationAutoValidation().AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<BabyCareContext>();

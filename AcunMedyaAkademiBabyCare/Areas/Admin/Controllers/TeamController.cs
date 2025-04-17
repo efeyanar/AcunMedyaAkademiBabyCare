@@ -36,6 +36,11 @@ namespace AcunMedyaAkademiBabyCare.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult CreateTeam(Team team)
         {
+            //Fast Fail
+            if (!ModelState.IsValid)//kurallara uymuyorsa
+            { 
+                return View(team);
+            }
             _context.Teams.Add(team);
             _context.SaveChanges();
             return RedirectToAction("TeamList");
