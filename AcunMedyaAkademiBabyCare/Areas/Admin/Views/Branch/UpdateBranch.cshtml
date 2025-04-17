@@ -1,0 +1,15 @@
+﻿@model Branch
+@{
+    ViewData["Title"] = "UpdateBranch";
+    Layout = "~/Areas/Admin/Views/AdminDefault/Index.cshtml";
+}
+
+<h1>Branş Güncelleme</h1>
+<form method="post">
+    <label>Branş ID</label>
+    <input type="hidden" asp-for="BranchId" class="form-control" />
+    <br />
+    <input type="text" asp-for="BranchName" class="form-control" />
+    <br />
+    <button class="btn btn-danger">Güncelle</button>
+</form>
